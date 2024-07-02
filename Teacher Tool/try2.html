@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology Settings Form</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px; /* Add some margin around the form */
+      padding: 0;
+    }
+
+    .form-container {
+      max-width: 600px;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 30px;
+      margin: 0 auto; /* Center horizontally */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #333333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+      line-height: 1.5; /* Improve readability by adjusting line spacing */
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+    <div class="form-container">
+      <h2>Select your priority or focus for choosing high-quality EdTech.</h2>
+  
+      <form onsubmit="return handleFormSubmit()"> <label>
+          <input type="checkbox" name="interest[]" value="1">
+          I want to select edtech that offer good quality content that incorporates technology features to enhance teaching and learning experiences for the chosen topic.
+        </label>
+        <br>
+  
+        <label>
+          <input type="checkbox" name="interest[]" value="5">
+          I want to select EdTech that offers high-quality content, utilizes recommended pedagogy, and incorporates technology features to enhance teaching and learning experiences for the chosen topic.
+        </label>
+        <br>
+  
+        <div class="button-container">
+          <input type="submit" class="submit-btn" value="Next Page">
+        </div>
+      </form>
+    </div>
+  
+    <script>
+      function handleFormSubmit() {
+        const checkbox1 = document.querySelector('input[value="1"]');
+        if (checkbox1.checked) {
+          window.location.href = "CT.html";  // Replace with your next page URL
+          return false; // Prevent default form submission
+        }
+        return true; // Allow default form submission if checkbox is not checked
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+    const radioChoice = urlParams.get('choice'); // Get the radio button selection
+
+    if (radioChoice === "1" && document.getElementById('checkbox1').checked) {
+      window.location.href = "DCR.html"; // Redirect to xyz.html on condition
+    } else if (radioChoice === "2" && document.getElementById('checkbox2').checked) {
+      window.location.href = "GBL.html"; // Redirect to abc.html on condition
+    } else if (radioChoice === "3" && document.getElementById('checkbox2').checked) {
+        window.location.href = "IAV.html"; // Redirect to abc.html on condition
+    } else if (radioChoice === "4" && document.getElementById('checkbox2').checked) {
+        window.location.href = "PAL.html"; // Redirect to abc.html on condition
+    } 
+    </script>
+  </body>
+
+
+</body>
+</html>
